@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+  <windownamedef>
+    <name>NEOVIM_E</name>
+    <regex>Neovim-e</regex>
+  </windownamedef>
+  <replacementdef>
+    <replacementname>APP_TO_CTRL</replacementname>
+    <replacementvalue>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CONTROL_L</replacementvalue>
+  </replacementdef>
+  <item>
+    <name>Application Key to Command_L (custom).</name>
+    <appendix>(+ Application Key to Control_L in Terminal, Screen Sharing, MacVim,</appendix>
+    <appendix>RDC, Emacs, X11, VNC, Neovim-e)</appendix>
+    <identifier>private.remap.pc_application2commandL_controlL</identifier>
+    <block>
+      <only>TERMINAL,SCREEN_SHARING, VI, REMOTEDESKTOPCONNECTION, EMACS, X11, VNC</only>
+      <autogen>{{ APP_TO_CTRL }}</autogen>
+    </block>
+    <block>
+      <windowname_only>NEOVIM_E</windowname_only>
+      <autogen>{{ APP_TO_CTRL }}</autogen>
+    </block>
+    <autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::COMMAND_L</autogen>
+  </item>
+</root>
